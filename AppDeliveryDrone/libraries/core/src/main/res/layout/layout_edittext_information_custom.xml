@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            style="@style/text_bold_14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="trongvq" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTotalLength"
+            style="@style/text_14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="0/30"
+            tools:visibility="visible" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edtInformation"
+            style="@style/text_12"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_edittext_information"
+            android:gravity="center_vertical"
+            android:minHeight="48dp"
+            android:paddingHorizontal="44dp"
+            android:textColorHint="@color/color_6F6F6F"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+            tools:text="Thao huyenThao huyenThao111111111111111" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imvTitle"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="12dp"
+            android:src="@drawable/ic_person"
+            app:layout_constraintBottom_toBottomOf="@+id/edtInformation"
+            app:layout_constraintStart_toStartOf="@+id/edtInformation"
+            app:layout_constraintTop_toTopOf="@+id/edtInformation" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imvClearText"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="4dp"
+            android:padding="12dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/edtInformation"
+            app:layout_constraintTop_toTopOf="@+id/edtInformation"
+            app:srcCompat="@drawable/ic_close_edittext"
+            tools:visibility="visible" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imvPhoneBook"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="4dp"
+            android:padding="12dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@+id/imvClearText"
+            app:layout_constraintTop_toTopOf="@+id/edtInformation"
+            app:srcCompat="@drawable/icon_phone_book"
+            tools:visibility="gone"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvError"
+            style="@style/text_12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/color_Ef1e4a"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtInformation"
+            tools:text="Tên người dùng chứa tối thiểu 6 ký tự."
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

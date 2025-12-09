@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#1aFFE7E4">
+
+        <!-- ⭐ Background Shadow -->
+        <ImageView
+            android:id="@+id/bgShadow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bg_radial_shadow"
+            android:layout_marginTop="40dp"
+            android:alpha="0.9"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- ⭐ Header Logo -->
+        <ImageView
+            android:id="@+id/tvTitle"
+            android:background="@drawable/viettel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:scaleX="1.0"
+            android:scaleY="1.0"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- ⭐ Drone -->
+        <ImageView
+            android:id="@+id/ivDrone"
+            android:layout_width="400dp"
+            android:layout_height="400dp"
+            android:src="@drawable/ic_drone_red_3d2"
+            android:layout_marginTop="10dp"
+            android:elevation="20dp"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+        <!-- ⭐ Main button -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btnChooseService"
+            android:layout_width="0dp"
+            android:layout_height="110dp"
+            android:layout_marginHorizontal="18dp"
+            android:layout_marginTop="30dp"
+            android:foreground="@drawable/ripple_red"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardElevation="12dp"
+            app:cardCornerRadius="100dp"
+            app:cardBackgroundColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/ivBottomIllustration"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="-27dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="24dp">
+
+                <ImageView
+                    android:id="@+id/ivCart"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/ic_cart_red_3d"
+                    android:layout_centerVertical="true" />
+
+                <TextView
+                    android:id="@+id/tvLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/ivCart"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/giao_h_ng_b_ng_drone"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="26sp" />
+
+                <ImageView
+                    android:id="@+id/ivArrow"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_arrow_left"
+                    android:rotation="180" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- ⭐ Illustration dưới cùng -->
+        <ImageView
+            android:id="@+id/ivBottomIllustration"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:background="@drawable/banner"
+            android:scaleType="centerInside"
+            android:alpha="1.0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

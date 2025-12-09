@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_tab_navigation"
+    app:startDestination="@+id/homePage2Fragment">
+
+    <fragment
+        android:id="@+id/homePage2Fragment"
+        android:name="com.delivery.setting.ui.home2.HomePage2Fragment"
+        android:label="homePage2Fragment"
+        tools:layout="@layout/fragment_home_page2" />
+
+    <fragment
+        android:id="@+id/userInfoFragment"
+        android:name="com.delivery.setting.ui.userinfo.UserInfoFragment"
+        android:label="UserInfoFragment"
+        tools:layout="@layout/fragment_user_info" />
+</navigation>

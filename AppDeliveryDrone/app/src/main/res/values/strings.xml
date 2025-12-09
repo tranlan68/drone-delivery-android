@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Viettel LAE</string>
+    <string name="home">Home</string>
+    <string name="favorite">Favorite</string>
+    <string name="splash">Splash</string>
+    
+    <!-- Login Screen -->
+    <string name="app_logo">App Logo</string>
+    <string name="hint_username_or_phone">Tên đăng nhập hoặc số điện thoại</string>
+    <string name="hint_password">Mật khẩu</string>
+    <string name="btn_login">Đăng nhập</string>
+    <string name="forgot_password">Quên mật khẩu</string>
+    <string name="register_account">Đăng ký tài khoản</string>
+    <string name="toggle_password_visibility">Toggle password visibility</string>
+    
+    <!-- Error Messages -->
+    <string name="error_username_empty">Vui lòng nhập tên đăng nhập</string>
+    <string name="error_username_invalid_format">Tên đăng nhập chứa ký tự không hợp lệ</string>
+    <string name="error_username_length_invalid">Tên đăng nhập không được vượt quá 20 ký tự</string>
+    <string name="error_password_empty">Vui lòng nhập mật khẩu</string>
+    <string name="error_password_invalid_format">Mật khẩu chứa ký tự không hợp lệ</string>
+    <string name="error_password_length_invalid">Mật khẩu phải từ 6-100 ký tự</string>
+
+    <string name="tab_home_title">Đặt hàng</string>
+    <string name="tab_home_order">Đơn hàng</string>
+    <string name="tab_home_acount">Cá nhân</string>
+    <string name="giao_h_ng_b_ng_drone">Giao hàng bằng Drone</string>
+
+</resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="viet_nam">Việt Nam</string>
+    <string name="english">Tiếng Anh</string>
+    <string name="text_empty" />
+
+    <!--    setting-->
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="not_connected_internet">Not connected internet</string>
+    <string name="input_password">Mật khẩu</string>
+    <string name="login">Đăng nhập</string>
+    <string name="notify_enter_user_name">Vui lòng nhập tên đăng nhập hoặc số điện thoại của bạn.</string>
+    <string name="wrong_user_name_format">Tên đăng nhập không hợp lệ.</string>
+    <string name="string_date_order"> • %s</string>
+    <string name="string_title_home">Cần giao khản cấp</string>
+    <string name="string_select_pick_up_point">Chọn điểm lấy hàng</string>
+    <string name="string_where_do_you_want_to_deliver">Bạn muốn giao đến đâu?</string>
+    <string name="string_deliver_to">Giao đến</string>
+    <string name="string_pending_orders_title">Đơn hàng đang chờ (%1$d)</string>
+    <string name="label_locker_name">Tên Locker</string>
+    <string name="label_locker_id">ID Locker</string>
+</resources>

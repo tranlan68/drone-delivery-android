@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigation"
+    app:startDestination="@id/splashFragment">  <!--app:startDestination="@id/splashFragment"-->
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.delivery.uservht.ui.splash.SplashFragment"
+        android:label="SplashFragment"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+
+        <action
+            android:id="@+id/action_splashFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/chooseServiceFragment"
+        android:name="com.delivery.uservht.ui.product.ChooseServiceFragment"
+        android:label="ChooseServiceFragment"
+        tools:layout="@layout/fragment_choose_service">
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.delivery.uservht.ui.auth.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/productListFragment"
+        android:name="com.delivery.uservht.ui.product.ProductListFragment"
+        android:label="Chọn sản phẩm"
+        tools:layout="@layout/product_list_fragment">
+        <action
+            android:id="@+id/action_productListFragment_to_homeFragment"
+            app:destination="@id/createOrderFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.delivery.uservht.ui.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+    </fragment>
+
+    <fragment
+        android:id="@+id/homePageFragment"
+        android:name="com.delivery.setting.ui.home.HomePageFragment"
+        android:label="HomePageFragment"
+        tools:layout="@layout/fragment_home_page">
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/deliveryTrackingFragment"
+        android:name="com.delivery.setting.ui.tracking.DeliveryTrackingFragment"
+        android:label="DeliveryTrackingFragment"
+        tools:layout="@layout/fragment_delivery_tracking" />
+    <action
+        android:id="@+id/action_global_to_deliveryTrackingFragment"
+        app:destination="@id/deliveryTrackingFragment"
+        app:enterAnim="@anim/slide_in_left"
+        app:exitAnim="@anim/slide_out_right"
+        app:popEnterAnim="@anim/slide_in_right"
+        app:popExitAnim="@anim/slide_out_left" />
+
+    <fragment
+        android:id="@+id/locationSearchFragment"
+        android:name="com.delivery.setting.ui.location.LocationSearchFragment"
+        android:label="LocationSearchFragment"
+        tools:layout="@layout/fragment_location_search"/>
+
+<!--    <action
+        android:id="@+id/action_global_to_homeFragment"
+        app:destination="@id/homeFragment"
+        app:enterAnim="@anim/slide_in_left"
+        app:exitAnim="@anim/slide_out_right"
+        app:popEnterAnim="@anim/slide_in_right"
+        app:popExitAnim="@anim/slide_out_left"
+        app:popUpTo="@id/chooseServiceFragment"
+        app:popUpToInclusive="true" />-->
+    <action
+        android:id="@+id/action_global_to_locationSearchFragment"
+        app:destination="@id/locationSearchFragment"
+        app:enterAnim="@anim/slide_in_left"
+        app:exitAnim="@anim/slide_out_right"
+        app:popEnterAnim="@anim/slide_in_right"
+        app:popExitAnim="@anim/slide_out_left" />
+
+    <fragment
+        android:id="@+id/createOrderFragment"
+        android:name="com.delivery.setting.ui.createorder.CreateOrderFragment"
+        android:label="CreateOrderFragment"
+        tools:layout="@layout/fragment_create_order"/>
+    <action
+        android:id="@+id/action_global_to_createOrderFragment"
+        app:destination="@id/createOrderFragment"
+        app:enterAnim="@anim/slide_in_left"
+        app:exitAnim="@anim/slide_out_right"
+        app:popEnterAnim="@anim/slide_in_right"
+        app:popExitAnim="@anim/slide_out_left" />
+
+
+    <fragment
+        android:id="@+id/orderHistoryFragment"
+        android:name="com.delivery.setting.ui.orderhistory.OrderHistoryFragment"
+        android:label="OrderHistoryFragment"
+        tools:layout="@layout/fragment_order_history"/>
+
+    <action
+        android:id="@+id/action_global_to_chooseServiceFragment"
+        app:destination="@id/chooseServiceFragment"
+        app:enterAnim="@anim/slide_in_left"
+        app:exitAnim="@anim/slide_out_right"
+        app:popEnterAnim="@anim/slide_in_right"
+        app:popExitAnim="@anim/slide_out_left"
+        app:popUpTo="@id/splashFragment" />
+    <action
+        android:id="@+id/action_global_to_orderHistoryFragment"
+        app:destination="@id/orderHistoryFragment"
+        app:enterAnim="@anim/slide_in_left"
+        app:exitAnim="@anim/slide_out_right"
+        app:popEnterAnim="@anim/slide_in_right"
+        app:popExitAnim="@anim/slide_out_left" />
+
+    <fragment
+        android:id="@+id/selectLocationLockerFragment"
+        android:name="com.delivery.setting.ui.location.SelectLocationLockerFragment"
+        android:label="SelectLocationLockerFragment"
+        tools:layout="@layout/fragment_select_location_locker"/>
+    <action
+        android:id="@+id/action_global_to_selectLocationLockerFragment"
+        app:destination="@id/selectLocationLockerFragment"
+        app:enterAnim="@anim/slide_in_left"
+        app:exitAnim="@anim/slide_out_right"
+        app:popEnterAnim="@anim/slide_in_right"
+        app:popExitAnim="@anim/slide_out_left" />
+
+
+    <action
+        android:id="@+id/action_global_to_homeFragment"
+        app:destination="@id/homeFragment"
+        app:enterAnim="@anim/slide_in_left"
+        app:exitAnim="@anim/slide_out_right"
+        app:popEnterAnim="@anim/slide_in_right"
+        app:popExitAnim="@anim/slide_out_left"
+        app:popUpTo="@id/loginFragment"
+        app:popUpToInclusive="true" />
+
+    <action
+        android:id="@+id/action_global_to_productListFragment"
+        app:destination="@id/productListFragment"
+        app:enterAnim="@anim/slide_in_left"
+        app:exitAnim="@anim/slide_out_right"
+        app:popEnterAnim="@anim/slide_in_right"
+        app:popExitAnim="@anim/slide_out_left"
+        app:popUpTo="@id/loginFragment"
+        app:popUpToInclusive="true" />
+
+    <action
+        android:id="@+id/action_global_to_loginFragment"
+        app:destination="@id/loginFragment"
+        app:enterAnim="@anim/slide_in_left"
+        app:exitAnim="@anim/slide_out_right"
+        app:popEnterAnim="@anim/slide_in_right"
+        app:popExitAnim="@anim/slide_out_left"
+        app:popUpTo="@id/loginFragment"
+        app:popUpToInclusive="true" />
+
+
+</navigation>

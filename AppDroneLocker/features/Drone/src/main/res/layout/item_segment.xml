@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="segment"
+            type="com.delivery.setting.model.Segment" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_16"
+        android:layout_marginTop="@dimen/dimen_8"
+        android:layout_marginEnd="@dimen/dimen_16"
+        android:layout_marginBottom="@dimen/dimen_8"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/dimen_12"
+        app:cardElevation="@dimen/dimen_4">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dimen_16">
+
+            <!-- Accent View (Left Border) -->
+
+
+            <!-- Drone Icon and Name -->
+            <ImageView
+                android:id="@+id/ivDroneIcon"
+                android:layout_width="@dimen/dimen_32"
+                android:layout_height="@dimen/dimen_32"
+                android:layout_marginStart="@dimen/dimen_12"
+                android:contentDescription="@string/drone_icon_description"
+                android:src="@drawable/ic_drone_2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvDroneName"
+                style="14@style/text_bold_14"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_8"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Máy bay: RID_VT1234567891001"
+                app:layout_constraintBottom_toBottomOf="@+id/ivDroneIcon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivDroneIcon"
+                app:layout_constraintTop_toTopOf="@+id/ivDroneIcon" />
+
+            <!-- Departure Point -->
+            <TextView
+                android:id="@+id/tvDeparturePoint"
+                style="@style/text_12"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_12"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Điểm cất cánh: Hub VMC"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivDroneIcon" />
+
+            <!-- Landing Point -->
+            <TextView
+                android:id="@+id/tvLandingPoint"
+                style="@style/text_12"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_6"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Điểm hạ cánh: Hub DVTC"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDeparturePoint" />
+
+            <!-- Status -->
+            <TextView
+                android:id="@+id/tvStatus"
+                style="@style/text_12"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_6"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Trạng thái: Chưa bắt đầu"
+                android:textColor="@color/orange"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvLandingPoint" />
+
+            <!-- Start Time -->
+            <TextView
+                android:id="@+id/tvStartTime"
+                style="@style/text_12"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_6"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Bắt đầu: "
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvStatus" />
+
+            <!-- End Time -->
+            <TextView
+                android:id="@+id/tvEndTime"
+                style="@style/text_12"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_6"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Kết thúc: "
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvStartTime" />
+
+            <!-- Action Button -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnActionStart"
+                style="@style/text_bold_14"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dimen_40"
+                android:layout_marginTop="@dimen/dimen_12"
+                android:background="@drawable/bg_action_button_waiting"
+                android:gravity="center"
+                android:text="Bắt đầu"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/btnActionEnd"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvEndTime" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnActionEnd"
+                style="@style/text_bold_14"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dimen_40"
+                android:layout_marginStart="@dimen/dimen_10"
+                android:layout_marginTop="@dimen/dimen_12"
+                android:background="@drawable/bg_action_button_send"
+                android:gravity="center"
+                android:text="Kết thúc"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btnActionStart"
+                app:layout_constraintTop_toBottomOf="@+id/tvEndTime" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:backgroundTint="@android:color/white"
+        app:cardCornerRadius="18dp"
+        app:cardUseCompatPadding="true"
+        app:cardElevation="3dp"
+        android:foreground="?android:attr/selectableItemBackground">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <!-- =================================================== -->
+            <!-- ⭐ ROW 1: ORDER ID + DATE -->
+            <!-- =================================================== -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutOrderInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tvOrderId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:textColor="#D62828"
+                    tools:text="#50124"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvOderDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="#7A7A7A"
+                    tools:text="01/12/2025 • 08:00"
+                    app:layout_constraintTop_toTopOf="@id/tvOrderId"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <!-- =================================================== -->
+            <!-- ⭐ ROW 2: STATUS + EXPECTED DATE -->
+            <!-- =================================================== -->
+            <TextView
+                android:id="@+id/tvOrderStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="#0288D1"
+                tools:text="Chờ xác nhận"
+                app:layout_constraintTop_toBottomOf="@id/layoutOrderInfo"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tvExpectedDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                android:textColor="#0288D1"
+                tools:text="Giao trong: 12 phút"
+                app:layout_constraintTop_toTopOf="@id/tvOrderStatus"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+
+            <!-- =================================================== -->
+            <!-- ⭐ SELECTED PRODUCTS -->
+            <!-- =================================================== -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardSelectedProducts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/tvOrderStatus">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:background="@drawable/bg_selected_products_border">
+
+                    <GridLayout
+                        android:id="@+id/glSelectedProducts"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:columnCount="4"
+                        android:useDefaultMargins="true" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- =================================================== -->
+            <!-- ⭐ ROUTE TIMELINE -->
+            <!-- =================================================== -->
+            <LinearLayout
+                android:id="@+id/routeRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                app:layout_constraintTop_toBottomOf="@id/cardSelectedProducts">
+
+                <TextView
+                    android:id="@+id/tvFromLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#222222"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    tools:text="Hub VMC" />
+
+                <ImageView
+                    android:id="@+id/viewPickupDot"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/ic_dot_blue" />
+
+                <FrameLayout
+                    android:id="@+id/trailContainer"
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp">
+
+                    <View
+                        android:id="@+id/viewMovingDot"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/bg_circle_blue"
+                        android:alpha="0" />
+
+                </FrameLayout>
+
+                <ImageView
+                    android:id="@+id/viewDeliveryDot"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_location" />
+
+                <TextView
+                    android:id="@+id/tvToLocation"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="#222222"
+                    android:layout_weight="1"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="8dp"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    tools:text="Hub DVTC" />
+
+            </LinearLayout>
+
+
+            <!-- LINE -->
+            <View
+                android:id="@+id/viewLine"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="18dp"
+                android:background="#E6E6E6"
+                app:layout_constraintTop_toBottomOf="@id/routeRow" />
+
+
+            <!-- =================================================== -->
+            <!-- ⭐ PACKAGE INFO -->
+            <!-- =================================================== -->
+            <LinearLayout
+                android:id="@+id/layoutPackageInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/viewLine">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginRight="10dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_drone" />
+
+                    <TextView
+                        android:id="@+id/tvPackageType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:textColor="#555"
+                        android:textSize="13sp"
+                        tools:text="Loại hàng" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_package_box" />
+
+                    <TextView
+                        android:id="@+id/tvPackageWeight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="13sp"
+                        android:textColor="#555"
+                        android:layout_marginStart="6dp"
+                        tools:text="S • 1.0kg" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginRight="10dp">
+
+                    <TextView
+                        android:id="@+id/tvProperty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:textColor="#555"
+                        android:textSize="13sp"
+                        tools:text="Hỏa tốc" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

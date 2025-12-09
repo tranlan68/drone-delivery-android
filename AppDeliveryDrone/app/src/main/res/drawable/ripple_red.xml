@@ -1,0 +1,9 @@
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="#1AE53E3E">  <!-- đỏ nhạt 10% -->
+
+    <item android:id="@android:id/mask">
+        <shape android:shape="rectangle">
+            <solid android:color="#E53E3E"/>
+        </shape>
+    </item>
+</ripple>

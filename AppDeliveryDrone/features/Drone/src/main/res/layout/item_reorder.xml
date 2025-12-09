@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+       android:id="@+id/clContainer"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/bg_radius_16_with_line"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:padding="16dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvOrderStatus"
+            style="@style/text_bold_light_14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_929292"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Đã hoàn thành" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvOderDate"
+            style="@style/text_bold_light_14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/string_date_order"
+            android:textColor="@color/color_929292"
+            app:layout_constraintStart_toEndOf="@+id/tvOrderStatus"
+            app:layout_constraintTop_toTopOf="@+id/tvOrderStatus" />
+
+        <View
+            android:id="@+id/viewPickupDot"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:background="@drawable/ic_dot_blue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvFromLocation" />
+
+        <View
+            android:layout_width="40dp"
+            android:layout_height="0dp"
+            android:background="@drawable/ic_more_vert"
+            app:layout_constraintBottom_toTopOf="@+id/viewDeliveryDot"
+            app:layout_constraintEnd_toEndOf="@+id/viewPickupDot"
+            app:layout_constraintStart_toStartOf="@+id/viewPickupDot"
+            app:layout_constraintTop_toBottomOf="@+id/viewPickupDot" />
+
+        <TextView
+            android:id="@+id/tvFromLocation"
+            style="@style/text_bold_light_14"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/viewPickupDot"
+            app:layout_constraintTop_toBottomOf="@+id/tvOrderStatus"
+            tools:text="Nguyễn Trọng Thịnh" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvFromAddress"
+            style="@style/text_12"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:visibility="gone"
+            android:textColor="@color/color_929292"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvFromLocation"
+            app:layout_constraintTop_toBottomOf="@id/tvFromLocation"
+            tools:text="380 Lạc Long Quân" />
+
+        <View
+            android:id="@+id/viewDeliveryDot"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/ic_location"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvFromAddress" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvToLocation"
+            style="@style/text_bold_light_14"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/viewDeliveryDot"
+            app:layout_constraintTop_toTopOf="@id/viewDeliveryDot"
+            tools:text="Hương" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvToAddress"
+            style="@style/text_12"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:visibility="gone"
+            android:textColor="@color/color_929292"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvToLocation"
+            app:layout_constraintTop_toBottomOf="@id/tvToLocation"
+            tools:text="Keangnam Landmark 72" />
+
+        <View
+            android:id="@+id/viewLine"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="#e8e8e8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvToAddress" />
+
+        <!-- Package info section -->
+        <LinearLayout
+            android:id="@+id/layoutPackageInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewLine">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_drone" />
+
+                <TextView
+                    android:id="@+id/tvPackageType"
+                    style="@style/text_12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    tools:text="Loại hàng" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_package_box" />
+
+                <TextView
+                    android:id="@+id/tvPackageWeight"
+                    style="@style/text_12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    tools:text="S • 1 kg" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Completed status -->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

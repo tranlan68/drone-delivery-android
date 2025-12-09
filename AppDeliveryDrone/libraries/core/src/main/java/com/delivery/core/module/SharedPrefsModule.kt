@@ -1,0 +1,17 @@
+package com.delivery.core.module
+
+import com.delivery.core.pref.AppPreferences
+import com.delivery.core.pref.RxPreferences
+import dagger.Binds
+import dagger.Module
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
+import javax.inject.Singleton
+
+@Module
+@InstallIn(SingletonComponent::class)
+abstract class SharedPrefsModule {
+    @Binds
+    @Singleton
+    abstract fun provideRxPreference(preferences: AppPreferences): RxPreferences
+}

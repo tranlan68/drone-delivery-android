@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Existing strings -->
+    <string name="app_name">DroneLocker</string>
+
+    <!-- Google Maps API Key -->
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">YOUR_GOOGLE_MAPS_API_KEY_HERE</string>
+
+    <!-- Login Screen -->
+    <string name="app_logo">App Logo</string>
+    <string name="hint_username_or_phone">Tên đăng nhập hoặc số điện thoại</string>
+    <string name="hint_password">Mật khẩu</string>
+    <string name="btn_login">Đăng nhập</string>
+    <string name="forgot_password">Quên mật khẩu</string>
+    <string name="register_account">Đăng ký tài khoản</string>
+    <string name="toggle_password_visibility">Toggle password visibility</string>
+
+    <!-- Error Messages -->
+    <string name="error_username_empty">Vui lòng nhập tên đăng nhập</string>
+    <string name="error_username_invalid_format">Tên đăng nhập chứa ký tự không hợp lệ</string>
+    <string name="error_username_length_invalid">Tên đăng nhập không được vượt quá 20 ký tự</string>
+    <string name="error_password_empty">Vui lòng nhập mật khẩu</string>
+    <string name="error_password_invalid_format">Mật khẩu chứa ký tự không hợp lệ</string>
+    <string name="error_password_length_invalid">Mật khẩu phải từ 6-100 ký tự</string>
+    <string name="string_content_home">Đặt ngay Drone Shiper của Viettel</string>
+
+    <!-- User Info Screen -->
+    <string name="user_info_title">Thông tin người dùng</string>
+    <string name="user_info_subtitle">Thông tin người dùng</string>
+    <string name="label_name">Tên*</string>
+    <string name="label_phone_number">Số điện thoại*</string>
+    <string name="hint_enter_name">Nhập tên của bạn</string>
+    <string name="hint_enter_phone">Nhập số điện thoại</string>
+    <string name="btn_save">Đăng xuất</string>
+
+    <!-- User Info Error Messages -->
+    <string name="error_name_empty">Vui lòng nhập tên</string>
+    <string name="error_name_too_short">Tên phải có ít nhất 2 ký tự</string>
+    <string name="error_name_too_long">Tên không được vượt quá 50 ký tự</string>
+    <string name="error_phone_empty">Vui lòng nhập số điện thoại</string>
+    <string name="error_phone_invalid_format">Số điện thoại không đúng định dạng</string>
+
+    <!-- Create Order Screen -->
+    <string name="create_order_title">Tạo đơn hàng</string>
+    <string name="label_from_location">Từ*</string>
+    <string name="label_to_location">Đến*</string>
+    <string name="label_recipient_name">Tên người nhận*</string>
+    <string name="label_recipient_phone">Số điện thoại*</string>
+    <string name="label_package_type">Loại hàng*</string>
+    <string name="label_package_size">Kích cỡ</string>
+    <string name="label_weight">Trọng lượng</string>
+
+    <string name="hint_select_from_location">Chọn điểm lấy hàng</string>
+    <string name="hint_select_to_location">Chọn điểm giao hàng</string>
+    <string name="hint_enter_recipient_name">Nhập tên người nhận</string>
+    <string name="hint_enter_recipient_phone">Nhập số điện thoại người nhận</string>
+    <string name="hint_enter_package_type">Nhập loại hàng hóa</string>
+
+    <string name="btn_create_order">Đặt đơn</string>
+
+    <!-- Create Order Error Messages -->
+    <string name="error_from_location_empty">Vui lòng chọn điểm lấy hàng</string>
+    <string name="error_to_location_empty">Vui lòng chọn điểm giao hàng</string>
+    <string name="error_recipient_name_empty">Vui lòng nhập tên người nhận</string>
+    <string name="error_recipient_name_too_short">Tên người nhận phải có ít nhất 2 ký tự</string>
+    <string name="error_recipient_phone_empty">Vui lòng nhập số điện thoại người nhận</string>
+    <string name="error_recipient_phone_invalid_format">Số điện thoại người nhận không đúng định dạng</string>
+    <string name="error_package_type_empty">Vui lòng nhập loại hàng hóa</string>
+    <string name="string_cancel_order">Hủy đơn</string>
+    <string name="string_start">Bắt đầu</string>
+
+    <!-- Select Location Locker Screen -->
+    <string name="select_location_locker_title">Chọn điểm lấy hàng</string>
+    <string name="select_location_delivery_title">Chọn điểm giao hàng</string>
+    <string name="select_location_locker_instructions">Chạm vào một điểm trên bản đồ để chọn điểm lấy hàng</string>
+    <string name="select_location_delivery_instructions">Chạm vào một điểm trên bản đồ để chọn điểm giao hàng</string>
+    <string name="btn_select_location">Chọn điểm này</string>
+
+    <!-- Select Location Locker Error Messages -->
+    <string name="error_load_lockers_failed">Không thể tải danh sách locker: %1$s</string>
+    <string name="error_no_locker_selected">Vui lòng chọn một locker</string>
+    <string name="error_no_locker_nearby">Không tìm thấy locker gần vị trí này</string>
+    <string name="success_locker_selected">Đã chọn %1$s</string>
+    <string name="success_pickup_location_selected">Đã chọn điểm lấy hàng: %1$s</string>
+    <string name="success_delivery_location_selected">Đã chọn điểm giao hàng: %1$s</string>
+
+    <!-- Delivery Tracking Screen -->
+    <string name="delivery_tracking_title">Theo dõi giao hàng</string>
+    <string name="error_load_data_failed">Không thể tải dữ liệu: %1$s</string>
+    <string name="error_load_route_failed">Không thể tải đường đi: %1$s</string>
+    <string name="error_no_route_data">Không có dữ liệu đường đi</string>
+    <string name="error_cancel_delivery_failed">Không thể hủy đơn hàng: %1$s</string>
+</resources>

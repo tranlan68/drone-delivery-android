@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:focusableInTouchMode="true"
+            android:paddingBottom="@dimen/dimen_20">
+
+            <!-- Toolbar -->
+            <com.delivery.core.utils.custom.ToolBarCommon
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:src_left="@drawable/ic_arrow_left"
+                app:string_title="@string/create_order_title" />
+
+            <!-- ⭐ TITLE PRODUCTS -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSelectedProductsTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="10dp"
+                android:text="Sản phẩm"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@id/toolbar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <!-- ⭐ CARD PRODUCTS -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardSelectedProducts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="6dp"
+                app:cardElevation="0dp"
+                app:cardCornerRadius="12dp"
+                app:layout_constraintTop_toBottomOf="@id/tvSelectedProductsTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="2dp"
+                    android:background="@drawable/bg_selected_products_border">
+
+                    <!-- ⭐ GRID 3 CỘT -->
+                    <GridLayout
+                        android:id="@+id/glSelectedProducts"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:columnCount="5"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:useDefaultMargins="true"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- From Location -->
+            <com.delivery.core.utils.custom.EditTextInformationCustom
+                android:id="@+id/edtFromLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                app:is_show_title="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardSelectedProducts"
+                app:src_image_title="@drawable/ic_dot_blue"
+                app:text_hint_edittext="@string/hint_select_from_location"
+                app:title_edittext="@string/label_from_location"
+                app:value_is_required="true"
+                android:layout_marginTop= "16dp"/>
+
+            <!-- To Location -->
+            <com.delivery.core.utils.custom.EditTextInformationCustom
+                android:id="@+id/edtToLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop= "16dp"
+                app:is_show_title="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtFromLocation"
+                app:src_image_title="@drawable/ic_location_to"
+                app:text_hint_edittext="@string/hint_select_to_location"
+                app:title_edittext="@string/label_to_location"
+                app:value_is_required="true" />
+
+            <!-- Receiver Phone -->
+            <com.delivery.core.utils.custom.EditTextInformationCustom
+                android:id="@+id/edtReceiverPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                android:inputType="phone"
+                android:visibility="gone"
+                app:is_show_title="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtToLocation"
+                app:src_image_title="@drawable/ic_phone"
+                app:text_hint_edittext="@string/hint_enter_recipient_phone"
+                app:title_edittext="@string/label_recipient_phone"
+                app:value_is_required="true" />
+
+            <!-- Delivery Priority -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clDeliveryPriority"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtReceiverPhone">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTitle"
+                    style="@style/text_bold_14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/string_ship_method"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <RadioGroup
+                    android:id="@+id/rbGroupPay"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/dimen_10"
+                    android:orientation="horizontal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTitle">
+
+                    <RadioButton
+                        android:id="@+id/rbStandard"
+                        style="@style/text_14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dimen_40"
+                        android:button="@null"
+                        android:drawableLeft="@drawable/bg_radio_oval_select"
+                        android:drawablePadding="@dimen/dimen_5"
+                        android:text="@string/string_standard" />
+
+                    <RadioButton
+                        android:id="@+id/rbExpress"
+                        style="@style/text_14"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_40"
+                        android:layout_marginStart="@dimen/dimen_30"
+                        android:button="@null"
+                        android:drawableLeft="@drawable/bg_radio_oval_select"
+                        android:drawablePadding="@dimen/dimen_5"
+                        android:text="@string/string_express" />
+                </RadioGroup>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Size Label -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSizeLabel"
+                style="@style/text_bold_14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/label_package_size"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/clDeliveryPriority" />
+
+            <!-- Size Selection -->
+            <LinearLayout
+                android:id="@+id/llSizeSelection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvSizeLabel">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnSizeS"
+                    style="@style/text_bold_16"
+                    android:layout_width="@dimen/dimen_40"
+                    android:layout_height="@dimen/dimen_40"
+                    android:layout_marginEnd="12dp"
+                    android:background="@drawable/bg_size_selected"
+                    android:gravity="center"
+                    android:text="S"
+                    android:textColor="@color/white" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnSizeM"
+                    style="@style/text_bold_16"
+                    android:layout_width="@dimen/dimen_40"
+                    android:layout_height="@dimen/dimen_40"
+                    android:layout_marginEnd="12dp"
+                    android:background="@drawable/bg_size_unselected"
+                    android:gravity="center"
+                    android:text="M"
+                    android:textColor="@color/color_6F6F6F" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnSizeL"
+                    style="@style/text_bold_16"
+                    android:layout_width="@dimen/dimen_40"
+                    android:layout_height="@dimen/dimen_40"
+                    android:layout_marginEnd="12dp"
+                    android:background="@drawable/bg_size_unselected"
+                    android:gravity="center"
+                    android:text="L"
+                    android:textColor="@color/color_6F6F6F" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnSizeXL"
+                    style="@style/text_bold_16"
+                    android:layout_width="@dimen/dimen_40"
+                    android:layout_height="@dimen/dimen_40"
+                    android:background="@drawable/bg_size_unselected"
+                    android:gravity="center"
+                    android:text="XL"
+                    android:textColor="@color/color_6F6F6F" />
+            </LinearLayout>
+
+            <!-- Weight Label -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvWeightLabel"
+                style="@style/text_bold_14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_20"
+                android:text="@string/label_weight"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@+id/llSizeSelection"
+                app:layout_constraintTop_toTopOf="@+id/tvSizeLabel" />
+
+            <!-- Weight Input -->
+            <LinearLayout
+                android:id="@+id/llWeight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="@+id/tvWeightLabel"
+                app:layout_constraintTop_toBottomOf="@+id/tvWeightLabel">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etWeight"
+                    style="@style/text_16"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/bg_edittext_information"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:text="1" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/text_16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="8dp"
+                    android:text="kg" />
+            </LinearLayout>
+
+            <!-- Package Illustration -->
+            <ImageView
+                android:id="@+id/ivPackageIllustration"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_marginTop="-50dp"
+                android:src="@drawable/ic_box_size_l"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/llWeight"
+                tools:ignore="ContentDescription" />
+
+            <!-- Create Order Button -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnCreateOrder"
+                style="@style/CustomButtonRed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="-30dp"
+                android:layout_marginBottom="24dp"
+                android:elevation="@dimen/dimen_4"
+                android:paddingVertical="16dp"
+                android:text="@string/btn_create_order"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivPackageIllustration" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</layout>

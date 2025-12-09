@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="28dp"
+    android:height="36dp"
+    android:viewportWidth="28"
+    android:viewportHeight="36">
+    
+    <!-- Drone shadow -->
+    <path
+        android:fillColor="#40000000"
+        android:pathData="M14,34C14,34 3,23 3,14C3,7.93 7.93,3 14,3C20.07,3 25,7.93 25,14C25,23 14,34 14,34Z"
+        android:translateX="1"
+        android:translateY="1"/>
+    
+    <!-- Drone body -->
+    <path
+        android:fillColor="#FFC107"
+        android:pathData="M14,32C14,32 3,21 3,12C3,5.93 7.93,1 14,1C20.07,1 25,5.93 25,12C25,21 14,32 14,32Z"/>
+
+    <path
+        android:fillColor="#FFC107"
+        android:pathData="M14,8L16,10L18,8L16,6L14,8ZM10,12L12,14L14,12L12,10L10,12ZM18,12L20,14L22,12L20,10L18,12ZM10,16L12,18L14,16L12,14L10,16ZM18,16L20,18L22,16L20,14L18,16Z"/>
+</vector>
+

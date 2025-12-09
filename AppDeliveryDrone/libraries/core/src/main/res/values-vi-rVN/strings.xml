@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="viet_nam">Việt Nam</string>
+    <string name="english">Tiếng Anh</string>
+    <string name="text_empty" />
+
+    <!--    setting-->
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="not_connected_internet">Not connected internet</string>
+    <string name="input_password">Mật khẩu</string>
+    <string name="login">Đăng nhập</string>
+    <string name="notify_enter_user_name">Vui lòng nhập tên đăng nhập hoặc số điện thoại của bạn.</string>
+    <string name="wrong_user_name_format">Tên đăng nhập không hợp lệ.</string>
+    <string name="string_date_order"> • %s</string>
+    <string name="string_title_home">Cần giao khản cấp</string>
+    <string name="string_select_pick_up_point">Chọn điểm lấy hàng</string>
+    <string name="string_where_do_you_want_to_deliver">Bạn muốn giao đến đâu?</string>
+    <string name="string_deliver_to">Giao đến</string>
+    
+    <!-- Order related strings -->
+    <string name="order_create_success">Đơn hàng đã được tạo thành công!</string>
+    <string name="order_create_success_with_id">Đơn hàng đã được tạo thành công!\nMã đơn hàng: %s</string>
+    <string name="order_create_error_generic">Đã xảy ra lỗi. Vui lòng thử lại</string>
+    <string name="order_create_error_invalid_data">Dữ liệu không hợp lệ</string>
+    <string name="order_create_error_network">Lỗi kết nối mạng</string>
+    <string name="order_create_error_validation">Dữ liệu đầu vào không hợp lệ</string>
+    
+    <!-- Login related strings -->
+    <string name="login_success">Đăng nhập thành công</string>
+    <string name="login_error_invalid_credentials">Tên đăng nhập hoặc mật khẩu không đúng</string>
+    <string name="login_error_generic">Đã xảy ra lỗi. Vui lòng thử lại</string>
+    <string name="login_error_network">Lỗi kết nối mạng</string>
+    <string name="login_error_validation">Dữ liệu đăng nhập không hợp lệ</string>
+    <string name="navigate_to_forgot_password">Chuyển đến quên mật khẩu</string>
+    <string name="navigate_to_register">Chuyển đến đăng ký</string>
+    <string name="string_pickup_location">Chọn điểm lấy hàng</string>
+    <string name="string_delivery_location">Bạn muốn giao đến đâu?</string>
+    <string name="string_ship_method">Phương thức vận chuyển</string>
+    <string name="string_standard">Tiêu chuẩn</string>
+    <string name="string_express">Hỏa tốc</string>
+    <string name="string_reset">Đặt lại</string>
+    <string name="string_open_history">Xem lịch sử</string>
+</resources>

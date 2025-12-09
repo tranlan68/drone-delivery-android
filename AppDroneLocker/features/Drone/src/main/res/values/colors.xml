@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    setting-->
+    <color name="color_title_setting">#999999</color>
+    <color name="color_line_divide">#9CC8C7CC</color>
+    <color name="color_content_setting">#AAAAAA</color>
+    <color name="color_title_login">#DC1515</color>
+    <color name="color_green">#8CC152</color>
+    
+    <!-- Primary App Colors -->
+    <color name="primary">#E53E3E</color>
+    <color name="primary_dark">#C53030</color>
+    <color name="secondary">#3182CE</color>
+    
+    <!-- Map and Route Colors -->
+    <color name="route_color">#E53E3E</color>
+    <color name="pickup_dot_color">#3182CE</color>
+    <color name="delivery_dot_color">#E53E3E</color>
+    <color name="button_cancel_pressed">#E53E3E</color>
+    <color name="button_cancel">#E8C9C9</color>
+
+    <!-- UI Colors -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="gray">#718096</color>
+    <color name="light_gray">#F7FAFC</color>
+    <color name="background_gray">#F5F5F5</color>
+    <color name="transparent">#00000000</color>
+    <color name="text_primary">#1A202C</color>
+    <color name="text_secondary">#718096</color>
+    <color name="icon_tint">#A0AEC0</color>
+    
+    <!-- Button Colors -->
+    <color name="button_primary">#E53E3E</color>
+    <color name="button_primary_pressed">#C53030</color>
+    
+    <!-- Login Screen Colors -->
+    <color name="primary_red">#E53E3E</color>
+    <color name="background_light">#F7FAFC</color>
+    <color name="text_dark">#1A202C</color>
+    <color name="icon_gray">#A0AEC0</color>
+    
+    <!-- Order Status Colors -->
+    <color name="orange">#FF9500</color>
+    <color name="blue">#007AFF</color>
+    <color name="green">#34C759</color>
+    
+    <!-- Additional Colors -->
+    <color name="text_tertiary">#A0AEC0</color>
+    <color name="color_929292">#929292</color>
+</resources>

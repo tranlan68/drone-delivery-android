@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#F3F5F9</color>
+    <color name="colorPrimaryDark">#F3F5F9</color>
+    <color name="colorAccent">#D60C4A</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="gray">#BEBEBE</color>
+    <color name="transparent">#00FFFFFF</color>
+
+    <color name="color_button_common_blue">#4356B4</color>
+
+    <!--color common-->
+    <color name="background_common">@color/white</color>
+    <color name="background_color_white">@color/white</color>
+    <color name="background_color_gray">#EFEFF4</color>
+    <color name="start_color_btn_common">#087EFF</color>
+    <color name="end_color_btn_common">#D60C4A</color>
+
+    <color name="color_hint_edit_text">#333333</color>
+    <color name="color_e1e1e1">#E1E1E1</color>
+    <color name="color_6F6F6F">#6F6F6F</color>
+    <color name="color_Ef1e4a">#EF1E4A</color>
+    <color name="color_EC1C4A">#EC1C4A</color>
+    <color name="color_CC002C">#CC002C</color>
+    <color name="color_gray_AEAEAE">#AEAEAE</color>
+    <color name="color_EE0033">#EE0033</color>
+    <color name="color_ed0034">#ed0034</color>
+    <color name="color_d7d7d8">#d7d7d8</color>
+    <color name="color_e8e8e8">#e8e8e8</color>
+    <color name="color_929292">#929292</color>// text color
+    <color name="primary_red">#E53E3E</color>
+</resources>

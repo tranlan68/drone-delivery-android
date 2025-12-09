@@ -1,0 +1,15 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Selected: ảnh viền đỏ -->
+    <item android:state_selected="true"
+        android:drawable="@drawable/selected_image" />
+
+    <!-- Normal: màu trắng -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#FFFFFFFF"/>
+            <corners android:radius="16dp"/>
+        </shape>
+    </item>
+
+</selector>

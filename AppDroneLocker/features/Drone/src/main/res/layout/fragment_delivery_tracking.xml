@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.delivery.setting.ui.tracking.DeliveryTrackingViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+        <!-- Toolbar -->
+        <com.delivery.core.utils.custom.ToolBarCommon
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:src_left="@drawable/ic_arrow_left"
+            app:string_title="Chi tiết đơn hàng" />
+
+        <!-- Map Container -->
+        <org.maplibre.android.maps.MapView
+            android:id="@+id/mapView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/bottomInfoContainer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bottomInfoContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_radius_16_top_left_top_right"
+            android:elevation="@dimen/dimen_4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <View
+                android:id="@+id/viewAccent"
+                android:layout_width="@dimen/dimen_10"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Order ID -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvOrderId"
+                style="@style/text_bold_12"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_14"
+                android:layout_marginTop="@dimen/dimen_8"
+                android:drawableStart="@drawable/ic_goods_code"
+                android:drawablePadding="@dimen/dimen_8"
+                android:gravity="center_vertical"
+                app:layout_constraintEnd_toStartOf="@+id/btnAction"
+                app:layout_constraintStart_toEndOf="@+id/viewAccent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="#3329e6897218" />
+
+            <!-- Drone Type -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDroneType"
+                style="@style/text_bold_12"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_14"
+                android:layout_marginTop="@dimen/dimen_4"
+                android:drawableStart="@drawable/ic_drone_2"
+                android:drawablePadding="@dimen/dimen_8"
+                android:gravity="center_vertical"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toStartOf="@+id/btnAction"
+                app:layout_constraintStart_toEndOf="@+id/viewAccent"
+                app:layout_constraintTop_toBottomOf="@+id/tvOrderId"
+                tools:text="Máy bay: string" />
+
+            <!-- Size and Weight -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSizeWeight"
+                style="@style/text_12"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_14"
+                android:layout_marginTop="@dimen/dimen_4"
+                android:drawableStart="@drawable/ic_parcel_size"
+                android:drawablePadding="@dimen/dimen_8"
+                android:gravity="center_vertical"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toStartOf="@+id/btnAction"
+                app:layout_constraintStart_toEndOf="@+id/viewAccent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDroneType"
+                tools:text="S • 1.0 kg" />
+
+            <!-- Status and Date -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvStatusDate"
+                style="@style/text_12"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_14"
+                android:layout_marginTop="@dimen/dimen_4"
+                android:layout_marginBottom="@dimen/dimen_8"
+                android:textColor="@color/orange"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/btnAction"
+                app:layout_constraintStart_toEndOf="@+id/viewAccent"
+                app:layout_constraintTop_toBottomOf="@+id/tvSizeWeight"
+                tools:text="Chuẩn bị gửi • 14/04/57649" />
+
+            <!-- Action Button -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnAction"
+                style="@style/CustomButtonRed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimen_18"
+                android:background="@drawable/bg_action_button"
+                android:minWidth="80dp"
+                android:padding="@dimen/dimen_8"
+                android:text="@string/string_start"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

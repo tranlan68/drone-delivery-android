@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+
+    <!-- size nhỏ gọn giống vùng avatar -->
+    <size android:width="280dp" android:height="280dp"/>
+
+    <gradient
+        android:type="radial"
+        android:gradientRadius="180dp"
+		android:startColor="#33D00000"
+        android:endColor="#00FFFFFF"/>
+
+</shape>

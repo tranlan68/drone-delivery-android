@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homePage2Fragment"
+        android:icon="@drawable/ic_bottom_tab_home"
+        android:contentDescription="@string/tab_home_title"
+        android:title="@string/tab_home_title" />
+
+    <item
+        android:id="@+id/userInfoFragment"
+        android:icon="@drawable/ic_bottom_tab_user"
+        android:contentDescription="@string/tab_home_acount"
+        android:title="@string/tab_home_acount" />
+</menu>

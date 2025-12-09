@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dimen_16"
+        android:layout_marginVertical="@dimen/dimen_8"
+        android:background="@drawable/bg_order_card">
+
+        <!-- Accent color bar (left border) -->
+        <View
+            android:id="@+id/viewAccent"
+            android:layout_width="@dimen/dimen_10"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Order ID -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvOrderId"
+            style="@style/text_bold_12"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_14"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:drawableStart="@drawable/ic_goods_code"
+            android:drawablePadding="@dimen/dimen_8"
+            android:gravity="center_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/viewAccent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="#3329e6897218" />
+
+        <!-- Drone Type -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDroneType"
+            style="@style/text_bold_12"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_14"
+            android:layout_marginTop="@dimen/dimen_4"
+            android:drawableStart="@drawable/ic_drone_2"
+            android:drawablePadding="@dimen/dimen_8"
+            android:gravity="center_vertical"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/viewAccent"
+            app:layout_constraintTop_toBottomOf="@+id/tvOrderId"
+            tools:text="Máy bay: string" />
+
+        <!-- Size and Weight -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSizeWeight"
+            style="@style/text_12"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_14"
+            android:layout_marginTop="@dimen/dimen_4"
+            android:drawableStart="@drawable/ic_parcel_size"
+            android:drawablePadding="@dimen/dimen_8"
+            android:gravity="center_vertical"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/viewAccent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDroneType"
+            tools:text="S • 1.0 kg" />
+
+        <!-- Source and Destination -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSourceDest"
+            style="@style/text_12"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_14"
+            android:layout_marginTop="@dimen/dimen_4"
+            android:drawableStart="@drawable/ic_location_from"
+            android:drawablePadding="@dimen/dimen_8"
+            android:gravity="center_vertical"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/viewAccent"
+            app:layout_constraintTop_toBottomOf="@+id/tvSizeWeight"
+            tools:text="Từ: Locker A → Đến: Locker B" />
+
+        <!-- Status and Date -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvStatusDate"
+            style="@style/text_12"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_14"
+            android:layout_marginTop="@dimen/dimen_4"
+            android:layout_marginBottom="@dimen/dimen_8"
+            android:textColor="@color/orange"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/viewAccent"
+            app:layout_constraintTop_toBottomOf="@+id/tvSourceDest"
+            tools:text="Chuẩn bị gửi • 14/04/57649" />
+
+        <!-- Action Button -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnAction"
+            style="@style/CustomButtonRed"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_action_button"
+            android:minWidth="80dp"
+            android:padding="@dimen/dimen_8"
+            android:text="@string/string_start"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvStatusDate" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+

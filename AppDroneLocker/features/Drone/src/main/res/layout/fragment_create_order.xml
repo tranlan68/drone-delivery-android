@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:focusableInTouchMode="true">
+
+            <!-- Toolbar -->
+            <com.delivery.core.utils.custom.ToolBarCommon
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:src_left="@drawable/ic_arrow_left"
+                app:string_title="@string/create_order_title" />
+
+            <!-- From Location -->
+            <com.delivery.core.utils.custom.EditTextInformationCustom
+                android:id="@+id/edtFromLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                app:is_show_title="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                app:src_image_title="@drawable/ic_dot_blue"
+                app:text_hint_edittext="@string/hint_select_from_location"
+                app:title_edittext="@string/label_from_location"
+                app:value_is_required="true" />
+
+            <!-- To Location -->
+            <com.delivery.core.utils.custom.EditTextInformationCustom
+                android:id="@+id/edtToLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                app:is_show_title="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtFromLocation"
+                app:src_image_title="@drawable/ic_location_to"
+                app:text_hint_edittext="@string/hint_select_to_location"
+                app:title_edittext="@string/label_to_location"
+                app:value_is_required="true" />
+
+            <!-- Recipient Name -->
+            <com.delivery.core.utils.custom.EditTextInformationCustom
+                android:id="@+id/edtRecipientName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                app:is_show_title="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtToLocation"
+                app:src_image_title="@drawable/ic_person"
+                app:text_hint_edittext="@string/hint_enter_recipient_name"
+                app:title_edittext="@string/label_recipient_name"
+                app:value_is_required="true" />
+
+            <!-- Recipient Phone -->
+            <com.delivery.core.utils.custom.EditTextInformationCustom
+                android:id="@+id/edtRecipientPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                android:inputType="phone"
+                app:is_show_title="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtRecipientName"
+                app:src_image_title="@drawable/ic_phone"
+                app:text_hint_edittext="@string/hint_enter_recipient_phone"
+                app:title_edittext="@string/label_recipient_phone"
+                app:value_is_required="true" />
+
+            <!-- Package Type -->
+            <com.delivery.core.utils.custom.EditTextInformationCustom
+                android:id="@+id/edtPackageType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                app:is_show_title="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtRecipientPhone"
+                app:src_image_title="@drawable/ic_package_box"
+                app:text_hint_edittext="@string/hint_enter_package_type"
+                app:title_edittext="@string/label_package_type"
+                app:value_is_required="true" />
+
+            <!-- Size Selection Section -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSizeLabel"
+                style="@style/text_bold_14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/label_package_size"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtPackageType" />
+
+            <!-- Size Selection Buttons Container -->
+            <LinearLayout
+                android:id="@+id/llSizeSelection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvSizeLabel">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnSizeS"
+                    style="@style/text_bold_16"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginEnd="12dp"
+                    android:background="@drawable/bg_size_selected"
+                    android:gravity="center"
+                    android:text="S"
+                    android:textColor="@color/white" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnSizeM"
+                    style="@style/text_bold_16"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginEnd="12dp"
+                    android:background="@drawable/bg_size_unselected"
+                    android:gravity="center"
+                    android:text="M"
+                    android:textColor="@color/color_6F6F6F" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnSizeL"
+                    style="@style/text_bold_16"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginEnd="12dp"
+                    android:background="@drawable/bg_size_unselected"
+                    android:gravity="center"
+                    android:text="L"
+                    android:textColor="@color/color_6F6F6F" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnSizeXL"
+                    style="@style/text_bold_16"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_size_unselected"
+                    android:gravity="center"
+                    android:text="XL"
+                    android:textColor="@color/color_6F6F6F" />
+
+            </LinearLayout>
+
+            <!-- Weight Section -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvWeightLabel"
+                style="@style/text_bold_14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/label_weight"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/llSizeSelection" />
+
+            <LinearLayout
+                android:id="@+id/llWeight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvWeightLabel">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etWeight"
+                    style="@style/text_16"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/bg_edittext_information"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:text="1" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/text_16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="8dp"
+                    android:text="kg" />
+
+            </LinearLayout>
+
+            <!-- Package Illustration -->
+            <ImageView
+                android:id="@+id/ivPackageIllustration"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_marginTop="-50dp"
+                android:src="@drawable/ic_box_size_l"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/llWeight"
+                tools:ignore="ContentDescription" />
+
+            <!-- Create Order Button -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnCreateOrder"
+                style="@style/CustomButtonRed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="24dp"
+                android:paddingVertical="16dp"
+                android:text="@string/btn_create_order"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivPackageIllustration" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</layout>
