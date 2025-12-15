@@ -29,8 +29,8 @@ class OrderHistoryPagingSource
                 // Determine which statuses to fetch based on tab
                 val statuses =
                     when (orderTab) {
-                        OrderTab.CURRENT -> listOf(OrderStatus.PENDING, OrderStatus.CONFIRMED, OrderStatus.IN_DELIVERY)
-                        OrderTab.HISTORY -> listOf(OrderStatus.DELIVERED, OrderStatus.CANCEL)
+                        OrderTab.CURRENT -> listOf(OrderStatus.PENDING, OrderStatus.CONFIRMED, OrderStatus.IN_DELIVERY, OrderStatus.CANCEL)
+                        OrderTab.HISTORY -> listOf(OrderStatus.DELIVERED/*, OrderStatus.CANCEL*/)
                     }
 
                 // Get data from repository

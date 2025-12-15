@@ -163,13 +163,15 @@ class DeliveryTrackingFragment :
                 binding.tvExpectedDate.text = "Đã giao: ${formatOrderDate(orderItem.deliveryDate, orderItem.deliveryTime )}"
             } else if (orderItem.status == OrderStatus.PENDING) {
                 //binding.tvExpectedDate.text = ""
-                binding. tvExpectedDate.text = "Đang chờ xác nhận đơn hàng"
-            } else if (orderItem.status == OrderStatus.CANCEL) {
-                binding. tvExpectedDate.text = "Đơn hàng đã bị hủy"
+                binding.tvExpectedDate.text = "Đang chờ xác nhận đơn hàng"
+            }/* else if (orderItem.status == OrderStatus.CANCEL) {
+                binding.tvExpectedDate.text = "Đơn hàng đã bị hủy"
                 binding.btnCancelOrder.isEnabled = false
+            } */else if (orderItem.status == OrderStatus.CANCEL) {  // -> Demo
+                binding.tvExpectedDate.text = "Đơn hàng đang tạm dừng vì lý do bất khả kháng"
             } else {
                // binding.tvExpectedDate.text = "Dự kiến: ${formatOrderDate(orderItem.deliveryDate, orderItem.deliveryTime)}"
-                binding. tvExpectedDate.text = "Giao trong: ${kotlin.math.ceil((orderItem.eta ?: 300L).toDouble()/60.0).toInt()} phút"
+                binding.tvExpectedDate.text = "Giao trong: ${kotlin.math.ceil((orderItem.eta ?: 300L).toDouble()/60.0).toInt()} phút"
             }
 
             binding.tvOrderId.setTextColor(binding.root.context.getColor(android.R.color.holo_red_dark))
@@ -270,14 +272,20 @@ class DeliveryTrackingFragment :
                 active(tvStepDone, OrderStatus.DELIVERED)
             }
             OrderStatus.CANCEL -> {
-                // tùy bạn, có thể tô đỏ/ghi hẳn "Đã hủy"
+                /*// có thể tô đỏ/ghi hẳn "Đã hủy"
                 inactive(tvStepPending)
                 inactive(tvArrowStepWaiting)
                 inactive(tvStepWaiting)
                 inactive(tvArrowStepDelivering)
                 inactive(tvStepDelivering)
                 inactive(tvArrowStepDone)
-                inactive(tvStepDone)
+                inactive(tvStepDone)*/
+
+                active(tvStepPending, OrderStatus.PENDING)
+                active(tvArrowStepWaiting, OrderStatus.CONFIRMED)
+                active(tvStepWaiting, OrderStatus.CONFIRMED)
+                active(tvArrowStepDelivering, OrderStatus.IN_DELIVERY)
+                active(tvStepDelivering, OrderStatus.IN_DELIVERY)
             }
         }
     }

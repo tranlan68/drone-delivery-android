@@ -108,7 +108,7 @@ class OrderHistoryPagingAdapter(
         init {
             binding.root.setOnClickListener {
                 val item = getItem(adapterPosition)
-                if (item != null && item.status != OrderStatus.DELIVERED && item.status != OrderStatus.CANCEL) {
+                if (item != null && item.status != OrderStatus.DELIVERED /*&& item.status != OrderStatus.CANCEL*/) {
                     onItemClick(item)
                 }
             }
@@ -133,6 +133,8 @@ class OrderHistoryPagingAdapter(
                 } else if (item.status == OrderStatus.PENDING) {
                     //tvExpectedDate.text = ""
                     tvExpectedDate.text = ""
+                } else if (item.status == OrderStatus.CANCEL) {
+                    tvExpectedDate.text = "Đang tạm dừng"
                 } else {
                     //tvExpectedDate.text = "Dự kiến: ${formatOrderDate(item.deliveryDate, item.deliveryTime)}"
                     tvExpectedDate.text = "Giao trong: ${kotlin.math.ceil((item.eta ?: 300L).toDouble()/60.0).toInt()} phút"
@@ -149,6 +151,10 @@ class OrderHistoryPagingAdapter(
                     }
                 tvOrderStatus.setTextColor(binding.root.context.getColor(statusColor))
                 tvExpectedDate.setTextColor(binding.root.context.getColor(statusColor))
+
+                if (item.status == OrderStatus.CANCEL) {
+                    tvOrderStatus.setTextColor(binding.root.context.getColor(android.R.color.holo_orange_dark))
+                }
 
                 when (item.priority) {
                     DeliveryPriority.STANDARD.value -> {
@@ -193,6 +199,9 @@ class OrderHistoryPagingAdapter(
 
 
         private fun getStatusText(status: OrderStatus): String {
+            if (status == OrderStatus.CANCEL) { // FOR DEMO
+                return "Đang giao"
+            }
             return status.displayName
         }
 

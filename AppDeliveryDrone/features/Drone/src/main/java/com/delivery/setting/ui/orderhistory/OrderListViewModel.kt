@@ -64,8 +64,8 @@ class OrderListViewModel
         viewModelScope.launch {
             val statuses =
                 when (currentOrderTab) {
-                    OrderTab.CURRENT -> listOf(OrderStatus.PENDING, OrderStatus.CONFIRMED, OrderStatus.IN_DELIVERY)
-                    OrderTab.HISTORY -> listOf(OrderStatus.DELIVERED, OrderStatus.CANCEL)
+                    OrderTab.CURRENT -> listOf(OrderStatus.PENDING, OrderStatus.CONFIRMED, OrderStatus.IN_DELIVERY, OrderStatus.CANCEL)
+                    OrderTab.HISTORY -> listOf(OrderStatus.DELIVERED/*, OrderStatus.CANCEL*/)
                 }
             try {
                 val freshOrders = orderRepository.getOrders(
@@ -90,6 +90,8 @@ class OrderListViewModel
                         orderItem.status = OrderStatus.IN_DELIVERY
                     } else if (number == 3) {
                         orderItem.status = OrderStatus.DELIVERED
+                    } else if (number == 4) {
+                        orderItem.status = OrderStatus.CANCEL
                     }*/
                 }
                 _updatedOrders.value = orders.associateBy { it.id }
