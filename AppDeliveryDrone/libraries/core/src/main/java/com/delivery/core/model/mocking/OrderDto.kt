@@ -29,6 +29,7 @@ data class OrderDto(
     @SerializedName("created_by") val createdBy: String? = null,
     @SerializedName("updated_by") val updatedBy: String? = null,
     @SerializedName("time_window") val timeWindow: Any? = null, // Unknown structure
+    @SerializedName("flight_notification_status") val flightNotificationStatus: String,
 ) : BaseResponse()
 
 /**

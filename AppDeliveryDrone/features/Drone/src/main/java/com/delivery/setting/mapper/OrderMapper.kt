@@ -83,7 +83,7 @@ class OrderMapper
                 packageType = "Loại hàng",
                 packageWeight = "${getSizeText(size)} • $weight kg",
                 orderDate = formatDate(createdAt),
-                status = mapOrderStatus(orderStatus),
+                status = mapOrderStatus(orderStatus, orderDto.flightNotificationStatus),
                 orderTime = formatTime(createdAt),
                 droneId = droneId,
                 receiverPhone = orderDto.receiverPhone,
@@ -93,6 +93,7 @@ class OrderMapper
                 deliveryDate = formatDate(deliveryAt),
                 deliveryTime = formatTime(deliveryAt),
                 createdAt = createdAt,
+                flightNotificationStatus = orderDto.flightNotificationStatus,
             )
         }
 
@@ -110,7 +111,7 @@ class OrderMapper
                 packageType = "Loại hàng",
                 packageWeight = "${getSizeText(apiResponse.size)} • ${apiResponse.weight} kg",
                 orderDate = formatDate(apiResponse.createdAt),
-                status = mapOrderStatus(apiResponse.orderStatus),
+                status = mapOrderStatus(apiResponse.orderStatus, apiResponse.flightNotificationStatus),
                 orderTime = formatTime(apiResponse.createdAt),
                 droneId = apiResponse.droneId,
                 receiverPhone = apiResponse.receiverPhone,
@@ -119,6 +120,7 @@ class OrderMapper
                 deliveryDate = formatDate(apiResponse.createdAt),
                 deliveryTime = formatTime(apiResponse.createdAt),
                 createdAt = apiResponse.createdAt,
+                flightNotificationStatus = apiResponse.flightNotificationStatus,
             )
         }
 
@@ -150,7 +152,7 @@ class OrderMapper
                 packageType = "Loại hàng",
                 packageWeight = "${getSizeText(apiResponse.size)} • ${apiResponse.weight} kg",
                 orderDate = formatDate(System.currentTimeMillis()), // API không có timestamp, dùng current time tạm
-                status = mapOrderStatus(apiResponse.status ?: 0),
+                status = mapOrderStatus(apiResponse.status ?: 0, apiResponse.flightNotificationStatus),
                 orderTime = formatTime(System.currentTimeMillis()), // API không có timestamp, dùng current time tạm
                 droneId = apiResponse.droneId,
                 receiverPhone = null,
@@ -158,22 +160,30 @@ class OrderMapper
                 deliveryDate = formatDate(System.currentTimeMillis()),
                 deliveryTime = formatTime(System.currentTimeMillis()),
                 createdAt = System.currentTimeMillis(),
+                flightNotificationStatus = apiResponse.flightNotificationStatus,
             )
         }
 
         /**
          * Map order status từ API (0,1,2,3) sang OrderStatus enum
          */
-        private fun mapOrderStatus(apiStatus: Int): OrderStatus {
-            return when (apiStatus) {
-                0 -> OrderStatus.PENDING
-                1 -> OrderStatus.PENDING
-                2 -> OrderStatus.CONFIRMED
-                3 -> OrderStatus.IN_DELIVERY
-                4 -> OrderStatus.DELIVERED
-                5 -> OrderStatus.CANCEL
-                else -> OrderStatus.PENDING
+        private fun mapOrderStatus(apiStatus: Int, flightNotificationStatus: String): OrderStatus {
+            var orderStatus = OrderStatus.PENDING
+            if (apiStatus == 0) {
+                orderStatus = OrderStatus.PENDING
+            } else if (apiStatus == 1) {
+                orderStatus = OrderStatus.PENDING
+            } else if (apiStatus == 2) {
+                orderStatus = OrderStatus.IN_DELIVERY
+            } else if (apiStatus == 3) {
+                orderStatus = OrderStatus.DELIVERED
+            } else if (apiStatus == 4) {
+                orderStatus = OrderStatus.CANCEL
             }
+            if (orderStatus == OrderStatus.PENDING && flightNotificationStatus == "ACTIVATED") {
+                orderStatus = OrderStatus.CONFIRMED
+            }
+            return orderStatus
         }
 
         /**

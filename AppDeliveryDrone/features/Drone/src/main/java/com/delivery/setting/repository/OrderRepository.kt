@@ -202,7 +202,8 @@ constructor(
                     ),
                 deliveryDate = "04 Aug",
                 deliveryTime = "14:30",
-                createdAt = 1672531200000L
+                createdAt = 1672531200000L,
+                flightNotificationStatus = "ACTIVATED",
             ),
             OrderHistoryItem(
                 id = "current_2",
@@ -222,7 +223,8 @@ constructor(
                 segments = null,
                 deliveryDate = "04 Aug",
                 deliveryTime = "14:30",
-                createdAt = 1672531200000L
+                createdAt = 1672531200000L,
+                flightNotificationStatus = "ACTIVATED",
             ),
             OrderHistoryItem(
                 id = "current_3",
@@ -242,7 +244,8 @@ constructor(
                 segments = null,
                 deliveryDate = "04 Aug",
                 deliveryTime = "14:30",
-                createdAt = 1672531200000L
+                createdAt = 1672531200000L,
+                flightNotificationStatus = "ACTIVATED",
             ),
             OrderHistoryItem(
                 id = "current_4",
@@ -262,7 +265,8 @@ constructor(
                 segments = null,
                 deliveryDate = "04 Aug",
                 deliveryTime = "14:30",
-                createdAt = 1672531200000L
+                createdAt = 1672531200000L,
+                flightNotificationStatus = "ACTIVATED",
             ),
             OrderHistoryItem(
                 id = "current_5",
@@ -282,7 +286,8 @@ constructor(
                 segments = null,
                 deliveryDate = "04 Aug",
                 deliveryTime = "14:30",
-                createdAt = 1672531200000L
+                createdAt = 1672531200000L,
+                flightNotificationStatus = "ACTIVATED",
             ),
             // History orders (DELIVERED)
             OrderHistoryItem(
@@ -302,7 +307,8 @@ constructor(
                 segments = null,
                 deliveryDate = "04 Aug",
                 deliveryTime = "14:30",
-                createdAt = 1672531200000L
+                createdAt = 1672531200000L,
+                flightNotificationStatus = "ACTIVATED",
             ),
             OrderHistoryItem(
                 id = "history_2",
@@ -321,7 +327,8 @@ constructor(
                 segments = null,
                 deliveryDate = "04 Aug",
                 deliveryTime = "14:30",
-                createdAt = 1672531200000L
+                createdAt = 1672531200000L,
+                flightNotificationStatus = "ACTIVATED",
             ),
             OrderHistoryItem(
                 id = "history_3",
@@ -340,7 +347,8 @@ constructor(
                 segments = null,
                 deliveryDate = "04 Aug",
                 deliveryTime = "14:30",
-                createdAt = 1672531200000L
+                createdAt = 1672531200000L,
+                flightNotificationStatus = "ACTIVATED",
             ),
             OrderHistoryItem(
                 id = "history_4",
@@ -359,7 +367,8 @@ constructor(
                 segments = null,
                 deliveryDate = "04 Aug",
                 deliveryTime = "14:30",
-                createdAt = 1672531200000L
+                createdAt = 1672531200000L,
+                flightNotificationStatus = "ACTIVATED",
             ),
             OrderHistoryItem(
                 id = "history_5",
@@ -378,7 +387,8 @@ constructor(
                 segments = null,
                 deliveryDate = "04 Aug",
                 deliveryTime = "14:30",
-                createdAt = 1672531200000L
+                createdAt = 1672531200000L,
+                flightNotificationStatus = "ACTIVATED",
             ),
             OrderHistoryItem(
                 id = "history_6",
@@ -397,7 +407,8 @@ constructor(
                 segments = null,
                 deliveryDate = "04 Aug",
                 deliveryTime = "14:30",
-                createdAt = 1672531200000L
+                createdAt = 1672531200000L,
+                flightNotificationStatus = "ACTIVATED",
             ),
             OrderHistoryItem(
                 id = "history_7",
@@ -416,7 +427,8 @@ constructor(
                 segments = null,
                 deliveryDate = "04 Aug",
                 deliveryTime = "14:30",
-                createdAt = 1672531200000L
+                createdAt = 1672531200000L,
+                flightNotificationStatus = "ACTIVATED",
             ),
             OrderHistoryItem(
                 id = "history_8",
@@ -435,7 +447,8 @@ constructor(
                 segments = null,
                 deliveryDate = "04 Aug",
                 deliveryTime = "14:30",
-                createdAt = 1672531200000L
+                createdAt = 1672531200000L,
+                flightNotificationStatus = "ACTIVATED",
             ),
         )
     }

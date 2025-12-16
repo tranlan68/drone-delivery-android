@@ -21,6 +21,7 @@ data class DroneOrderResponse(
     @SerializedName("start_lane_id") val startLaneId: String,
     @SerializedName("end_lane_id") val endLaneId: String,
     @SerializedName("eta") val eta: Long,
+    @SerializedName("flight_notification_status") val flightNotificationStatus: String,
 )
 
 data class FlightRoutePoint(

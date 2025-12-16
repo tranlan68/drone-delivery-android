@@ -200,7 +200,7 @@ class DeliveryTrackingFragment :
 
         // Draw multi-segment route when data is available
         if (/*state.segmentRoutes.isNotEmpty() &&*/ mapLibreMap != null && state.lockerPositions.isNotEmpty()) {
-            drawMultiSegmentRoute(state.segmentRoutes, state.lockerPositions, state.dronePosition, state.droneHeading, state.orderItem?.droneId)
+            drawMultiSegmentRoute(state.segmentRoutes, state.lockerPositions, state.dronePosition, state.droneHeading, state.orderItem?.droneId, state.orderItem?.status)
         } /*else if (state.routePoints.isNotEmpty() && mapLibreMap != null) {
             // Fallback to simple route
             drawRouteOnMap(state.routePoints)
@@ -208,7 +208,7 @@ class DeliveryTrackingFragment :
         else {
             binding.root.postDelayed({
                 if (mapLibreMap != null && state.lockerPositions.isNotEmpty()) {
-                    drawMultiSegmentRoute(state.segmentRoutes, state.lockerPositions, state.dronePosition, state.droneHeading, state.orderItem?.droneId)
+                    drawMultiSegmentRoute(state.segmentRoutes, state.lockerPositions, state.dronePosition, state.droneHeading, state.orderItem?.droneId, state.orderItem?.status)
                 }
             }, 200)
         }
@@ -516,7 +516,8 @@ class DeliveryTrackingFragment :
         lockerPositions: List<LockerPosition>,
         dronePosition: LatLng?,
         droneHeading: Double? = null,
-        droneId: String? = ""
+        droneId: String? = "",
+        orderStatus: OrderStatus?,
     ) {
         //if (segmentRoutes.isEmpty()) return
 
@@ -548,7 +549,9 @@ class DeliveryTrackingFragment :
 
             // FOR DEMO
             var routePoints = createRoutePointsForDemo(lockerPositions.first(), lockerPositions.last())
-            drawRouteOnMapDemo(style, routePoints)
+            if (orderStatus != null && orderStatus != OrderStatus.PENDING) {
+                drawRouteOnMapDemo(style, routePoints)
+            }
 
             // TKL Hardcode
             /*val sourceLockerPosition = LockerPosition(

@@ -15,4 +15,5 @@ data class OrderItemDto(
     @SerializedName("weight") val weight: Double,
     @SerializedName("size") val size: Int,
     @SerializedName("priority") val priority: Int?,
+    @SerializedName("flight_notification_status") val flightNotificationStatus: String,
 ) : BaseResponse()

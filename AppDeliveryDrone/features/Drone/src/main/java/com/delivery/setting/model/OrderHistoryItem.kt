@@ -24,6 +24,7 @@ data class OrderHistoryItem(
     val deliveryDate: String,
     val deliveryTime: String,
     val createdAt: Long,
+    val flightNotificationStatus: String,
 ) : Serializable
 
 enum class OrderStatus(val displayName: String) {
